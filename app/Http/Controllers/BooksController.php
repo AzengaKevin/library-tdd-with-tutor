@@ -7,23 +7,32 @@ use Illuminate\Http\Request;
 class BooksController extends Controller
 {
 
-    public function store(Request $request)
+    public function store()
     {
-        $data = $request->validate([
-            'title' => ['required'],
-            'author' => ['required'],
-        ]);
+        $book = \App\Book::create($this->validateRequest());
 
-        \App\Book::create($data);
+        return redirect($book->path());
     }
 
-    public function update(Request $request, \App\Book $book)
+    public function update(\App\Book $book)
     {
-        $data = $request->validate([
+        $book->update($this->validateRequest());
+
+        return redirect($book->path());
+    }
+
+    public function destroy(\App\Book $book)
+    {
+        $book->delete();
+
+        return redirect('/books');
+    }
+
+    private function validateRequest()
+    {
+        return request()->validate([
             'title' => ['required'],
             'author' => ['required'],
         ]);
-
-        $book->update($data);
     }
 }
