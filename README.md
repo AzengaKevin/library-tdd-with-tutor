@@ -16,6 +16,11 @@ which fails the unit test case is you try testing the models like
 
 Author::create(['name' => 'J.K, Rowling'])
 
-if it occurs just change the imported class to
+![Error, Screenshot](https://github.com/AzengaKevin/library-tdd-with-tutor/blob/master/public/img/screenshots/unittest-error.png)
 
-** Tests\TestCase **
+Incase it occurs just change the imported class to
+
+** Tests\TestCase ** <br>
+And now
+
+![Success, Screenshot](https://github.com/AzengaKevin/library-tdd-with-tutor/blob/master/public/img/screenshots/unittest-success.png)
