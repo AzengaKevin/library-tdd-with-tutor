@@ -15,10 +15,7 @@ class AuthorManagementTest extends TestCase
     public function an_author_can_be_created()
     {
 
-        $this->post('/authors', [
-            'name' => 'JK Rowling',
-            'dob' => '06/10/1997'
-        ]);
+        $this->post('/authors', $this->data());
 
         $authors = \App\Author::all();
 
@@ -27,5 +24,29 @@ class AuthorManagementTest extends TestCase
         $this->assertInstanceOf(Carbon::class, $authors->first()->dob);
  
         $this->assertEquals('1997/06/10', $authors->first()->dob->format('Y/m/d'));
+    }
+
+    /** @test */
+    public function a_name_is_required()
+    {
+        $this->post('/authors', array_merge($this->data(), ['name' => '']))
+            ->assertSessionHasErrors('name');
+
+    }
+
+    /** @test */
+    public function dob_is_required()
+    {
+        $this->post('/authors', array_merge($this->data(), ['dob' => '']))
+            ->assertSessionHasErrors('dob');
+    }
+
+
+    private function data()
+    {
+        return [
+            'name' => 'JK Rowling',
+            'dob' => '06/10/1997'
+        ];
     }
 }

@@ -27,5 +27,4 @@ Route::resources([
 ]);
 
 Route::post('/checkout/{book}', 'CheckoutController@store');
-
 Route::patch('/checkin/{book}', 'CheckinController@update');
