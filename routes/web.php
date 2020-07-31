@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function(){
     return view('welcome');
 });
@@ -21,3 +25,7 @@ Route::resources([
     'books' => 'BooksController',
     'authors' => 'AuthorsController',
 ]);
+
+Route::post('/checkout/{book}', 'CheckoutController@store');
+
+Route::patch('/checkin/{book}', 'CheckinController@update');
