@@ -65,6 +65,8 @@ class BookTransactionTest extends TestCase
     public function a_book_can_be_checked_in_by_an_authenticated_user()
     {
 
+        $this->withoutExceptionHandling();
+
         $book = factory(Book::class)->create();
 
         $this->actingAs($user = factory(User::class)->create());
