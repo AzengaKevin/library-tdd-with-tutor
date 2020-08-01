@@ -34463,6 +34463,10 @@ input:invalid, textarea:invalid, select:invalid {
   width: max-content;
 }
 
+.w-w-96 {
+  width: 24rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -73298,6 +73302,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: max-content;
   }
 
+  .sm\:w-w-96 {
+    width: 24rem;
+  }
+
   .sm\:z-0 {
     z-index: 0;
   }
@@ -112118,6 +112126,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .md\:w-w-96 {
+    width: 24rem;
   }
 
   .md\:z-0 {
@@ -150942,6 +150954,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: max-content;
   }
 
+  .lg\:w-w-96 {
+    width: 24rem;
+  }
+
   .lg\:z-0 {
     z-index: 0;
   }
@@ -189762,6 +189778,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .xl\:w-w-96 {
+    width: 24rem;
   }
 
   .xl\:z-0 {
